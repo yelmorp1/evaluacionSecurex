@@ -1,0 +1,49 @@
+<div class="basic-container">
+  <h2 class="titulo">MONITOREO</h2>
+  <mat-table class="mat-elevation-z8" [dataSource]="dataSource">
+    <ng-container matColumnDef="id">
+      <mat-header-cell class="header-custom" *matHeaderCellDef>
+        id
+      </mat-header-cell>
+      <mat-cell class="description-cell" *matCellDef="let listaMonitoreo">
+        {{ listaMonitoreo.idCajero }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="nombreCajero">
+      <mat-header-cell class="header-custom" *matHeaderCellDef>
+        Nombre Cajero
+      </mat-header-cell>
+      <mat-cell class="description-cell" *matCellDef="let listaMonitoreo">
+        {{ listaMonitoreo.nombreCajero }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="estado">
+      <mat-header-cell class="header-custom" *matHeaderCellDef>
+        Estado
+      </mat-header-cell>
+      <mat-cell class="description-cell" *matCellDef="let listaMonitoreo">
+        {{ listaMonitoreo.estado ? "OCUPADO" : "DISPONIBLE" }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="ticket">
+      <mat-header-cell class="header-custom" *matHeaderCellDef>
+        Ticket
+      </mat-header-cell>
+      <mat-cell class="description-cell" *matCellDef="let listaMonitoreo">
+        {{ listaMonitoreo.ticket }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="cliente">
+      <mat-header-cell class="header-custom" *matHeaderCellDef>
+        Cliente
+      </mat-header-cell>
+      <mat-cell class="description-cell" *matCellDef="let listaMonitoreo">
+        {{ listaMonitoreo.cliente }}
+      </mat-cell>
+    </ng-container>
+
+    <!-- displayedColumns = ['id', 'nombreCajero', 'ticketCliente', 'estado']; -->
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+</div>

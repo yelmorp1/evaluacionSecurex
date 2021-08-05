@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <!-- <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button> -->
+    <h1>Gestión de Cajeros</h1>
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button [routerLink]="'home/administration'"> Administración </a>
+      <a mat-button [routerLink]="'home/monitoring'"> Monitoreo </a>
+      <a mat-button [routerLink]="'home/ticket-service'"> Solicitar ticket </a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
