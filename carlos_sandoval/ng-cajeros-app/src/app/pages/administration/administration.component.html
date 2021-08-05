@@ -1,0 +1,93 @@
+<div class="basic-container">
+  <h2 class="titulo">ADMINISTRACIÓN</h2>
+  <mat-table class="mat-elevation-z8" [dataSource]="dataSource">
+    <ng-container matColumnDef="id">
+      <mat-header-cell class="header-custom" *matHeaderCellDef>
+        id
+      </mat-header-cell>
+      <mat-cell class="description-cell" *matCellDef="let cajero">
+        {{ cajero.idCajero }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="nombreCajero">
+      <mat-header-cell class="header-custom" *matHeaderCellDef>
+        Nombre Cajero
+      </mat-header-cell>
+      <mat-cell class="description-cell" *matCellDef="let cajero">
+        {{ cajero.nombreCajero }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="exclusivo">
+      <mat-header-cell class="header-custom" *matHeaderCellDef>
+        Exclusivo
+      </mat-header-cell>
+      <mat-cell class="description-cell" *matCellDef="let cajero">
+        <button
+          *ngIf="cajero.exclusivo"
+          mat-raised-button
+          color="primary"
+          (click)="CambiarExclusivo(cajero.idCajero)"
+        >
+          ACTIVO
+        </button>
+        <button
+          *ngIf="!cajero.exclusivo"
+          mat-raised-button
+          color="warn"
+          (click)="CambiarExclusivo(cajero.idCajero)"
+        >
+          INACTIVO
+        </button>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="normal">
+      <mat-header-cell class="header-custom" *matHeaderCellDef>
+        Normal
+      </mat-header-cell>
+      <mat-cell class="description-cell" *matCellDef="let cajero">
+        <button
+          *ngIf="cajero.normal"
+          mat-raised-button
+          color="primary"
+          (click)="CambiarNormal(cajero.idCajero)"
+        >
+          ACTIVO
+        </button>
+        <button
+          *ngIf="!cajero.normal"
+          mat-raised-button
+          color="warn"
+          (click)="CambiarNormal(cajero.idCajero)"
+        >
+          INACTIVO
+        </button>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="atenciónPreferencial">
+      <mat-header-cell class="header-custom" *matHeaderCellDef>
+        Preferencial
+      </mat-header-cell>
+      <mat-cell class="description-cell" *matCellDef="let cajero">
+        <button
+          *ngIf="cajero.preferencial"
+          mat-raised-button
+          color="primary"
+          (click)="CambiarPreferencial(cajero.idCajero)"
+        >
+          ACTIVO
+        </button>
+        <button
+          *ngIf="!cajero.preferencial"
+          mat-raised-button
+          color="warn"
+          (click)="CambiarPreferencial(cajero.idCajero)"
+        >
+          INACTIVO
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+</div>

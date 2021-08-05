@@ -1,0 +1,41 @@
+<div class="form-wrapper">
+  <mat-card class="box">
+    <mat-grid-list cols="4">
+      <mat-card-header>
+        <mat-card-title>TICKET</mat-card-title>
+      </mat-card-header>
+      <form class="example-form">
+        <mat-card-content>
+          <div>
+            <mat-form-field class="example-full-width">
+              <input
+                matInput
+                placeholder="Nombre"
+                [(ngModel)]="nombre"
+                name="nombre"
+                required
+              />
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+      </form>
+      <mat-card-actions>
+        <button
+          mat-raised-button
+          (click)="generarTicket()"
+          class="btn-block"
+          color="warn"
+        >
+          <mat-icon>send</mat-icon>
+          Generar Ticket
+        </button>
+      </mat-card-actions>
+      <mat-divider></mat-divider>
+      <mat-card [ngStyle]="{ 'background-color': 'skyblue' }">
+        <mat-card-subtitle>Ticket Nro : {{ ticket }}</mat-card-subtitle>
+        <mat-card-subtitle>Nombre : {{ nombreCliente }}</mat-card-subtitle>
+        <mat-card-subtitle>Edad : {{ edad }}</mat-card-subtitle>
+      </mat-card>
+    </mat-grid-list>
+  </mat-card>
+</div>
