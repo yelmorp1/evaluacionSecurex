@@ -1,0 +1,3 @@
+Ejecutar en STS con Maven Import
+Luego restaurar la bd MYSQL con el nombre de bd "ventsystemspring" el archivo backup sql esta ubicado en \exampleProject\src\main\webapp\resources\sql
+la contrasenha y el usuario de la bd se encuentran en el archivo application.properties
