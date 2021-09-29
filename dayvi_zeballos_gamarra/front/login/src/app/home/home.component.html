@@ -1,0 +1,19 @@
+<div class="mt-5 mb-5">
+  <h2 class="text-center mb-3">Bienvenido a mi app</h2>
+  <div class="text-center mb-5">
+    <button type="button" class="btn btn-danger" (click)="cerrarSesion()">Cerrar Sesión</button>
+  </div>
+
+  <div class="text-center">
+    <button type="button" class="btn btn-primary" (click)="listarUsuarios()">Listar usuarios</button>
+  </div>
+
+</div>
+<div class="text-center">
+<h2>Usuarios en BD</h2>
+<ul>
+  <li *ngFor="let user of lstUsuarios" style=" list-style-type: none;">
+    <span>{{user.username}}</span>
+  </li>
+</ul>
+</div>
